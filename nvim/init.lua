@@ -45,6 +45,11 @@ vim.cmd([[
   augroup end
 ]])
 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 -----------------
 -- Plugins
 -----------------
